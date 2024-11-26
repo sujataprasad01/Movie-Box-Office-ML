@@ -8,7 +8,6 @@ import ast
 def custom_rerun():
     st.session_state.rerun = True 
 
-
 def safe_literal_eval(val):
     try:
         return len(ast.literal_eval(val)) if isinstance(ast.literal_eval(val), list) else 0
