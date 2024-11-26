@@ -46,4 +46,13 @@ model.fit(X_train, y_train)
 with open('box_office_model.pkl', 'wb') as file:
     pickle.dump(model, file)
 
+from joblib import dump
+
+dump(model, 'model.joblib')
+
+
+from joblib import load
+
+model = load('model.joblib')
+
 print("Model training complete and saved.")

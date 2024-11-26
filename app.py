@@ -1,6 +1,5 @@
 
 import streamlit as st
-import pickle
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -27,8 +26,17 @@ def format_sales(sales):
         return str(sales)
 
 
+import pickle
+from sklearn.utils import _testing
+
+# Load the model
 with open('box_office_model.pkl', 'rb') as file:
-    model = pickle.load(file)
+    try:
+        model = pickle.load(file)
+    except ValueError:
+        # Compatibility fix
+        model = _testing.load_compatibility_pickle(file)
+
 
 train = pd.read_csv('train.csv')
 np.random.seed(42)
