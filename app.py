@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pickle
 import pandas as pd
@@ -187,3 +188,4 @@ elif page == "About Us":
 
 elif page == "Contact Us":
     st.write("Contact us at: contact@movieboxoffice.com")
+
